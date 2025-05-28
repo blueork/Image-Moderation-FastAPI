@@ -28,15 +28,17 @@ For the back end I have provided a dedicated requirements.txt. Nevertheless, I h
 
 3. I have used API keys for accessing the AI APIs. Please create your .env files for it.
 
-2. From the root directoty cd to the ./backend-fastAPI/app/ directory.
+4. Please ensure you have an `.env.` file in the `./backend-fastAPI` with the required API keys.
 
-3. Open the terminal in the current directory, and run 
+5. From the root directoty cd to the `./backend-fastAPI/app/` directory.
+
+6. Open the terminal in the current directory, and run 
 
 `fastapi dev main.py`
 
-4. The backend server will start at `http://127.0.0.1:8000`
+7. The backend server will start at `http://127.0.0.1:8000`
 
-5. IMPORTANT: It will output an Admin Token at the start. Save it for creating more tokens later on. If forgotten find it in the MongoDB `auth_db` database, in the collection `tokens` .
+8. IMPORTANT: It will output an Admin Token at the start. Save it for creating more tokens later on. If forgotten find it in the MongoDB `auth_db` database, in the collection `tokens` .
 
 ## Running the Frontend
 
