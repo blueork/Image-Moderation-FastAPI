@@ -80,7 +80,7 @@ class ImageModerationService:
             report["summary"] = "Unsafe - " + ", ".join(report["issues"])
         return report
 
-    def moderateImage_Experimental(self, encoded_image):
+    def moderateImage_Experimental(self, encoded_image, image_type):
         response = requests.post(
         url="https://openrouter.ai/api/v1/chat/completions",
         headers={
@@ -100,7 +100,7 @@ class ImageModerationService:
                 {
                     "type": "image_url",
                     "image_url": {
-                    "url": f"data:image/jpg;base64,{encoded_image}"
+                    "url": f"data:{image_type};base64,{encoded_image}"
                     # "url": "https://sightengine.com/assets/img/examples/example7.jpg"
                     }
                 }
