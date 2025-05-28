@@ -1,6 +1,6 @@
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
-from db import usages_col
+from .db import usages_col
 from datetime import datetime
 
 class UsageLoggerMiddleware(BaseHTTPMiddleware):

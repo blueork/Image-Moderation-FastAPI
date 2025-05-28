@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, Response, status, HTTPException, Depends, APIRouter, Depends
-from ImageModerationService import ImageModerationService
-from models import get_token_data
+from .ImageModerationService import ImageModerationService
+from .models import get_token_data
 
 router = APIRouter(tags=["moderation"])
 

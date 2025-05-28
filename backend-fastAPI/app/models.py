@@ -1,6 +1,6 @@
 from fastapi import Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from db import tokens_col
+from .db import tokens_col
 
 security = HTTPBearer()
 

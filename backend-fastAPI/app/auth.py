@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
-from db import tokens_col
-from models import require_admin
+from .db import tokens_col
+from .models import require_admin
 from datetime import datetime
 import secrets
 

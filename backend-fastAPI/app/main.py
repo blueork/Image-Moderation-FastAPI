@@ -1,10 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
 # import ImageModerationRouter
-from middleware import UsageLoggerMiddleware
+from .middleware import UsageLoggerMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-from auth import router as auth_router
-from ImageModerationRouter import router as moderate_router
-from db import tokens_col
+from .auth import router as auth_router
+from .ImageModerationRouter import router as moderate_router
+from .db import tokens_col
 from datetime import datetime
 import secrets
 from contextlib import asynccontextmanager
