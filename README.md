@@ -44,15 +44,19 @@ For the back end I have provided a dedicated requirements.txt. Nevertheless, I h
 
 1. Ensure you have npm installed
 
-2. From the root directoty cd to the ./image-moderation-frontend/src directory.
+2. Go to the `./image-moderation-frontend/` directory and run the following command in terminal to install the relevant the dependencies.
 
-3. Open the terminal in the current directory, and run 
+`npm install`
+
+3. From the root directoty cd to the `./image-moderation-frontend/src` directory.
+
+4. Open the terminal in the current directory, and run 
 
 `npm run dev`
 
-4. The frontend will start at `http://localhost:5173/`
+5. The frontend will start at `http://localhost:5173/`
 
-5. The frontend is quite basic but does the job.
+6. The frontend is quite basic but does the job.
 
 ## Dockerization
 I have provided the relevant files for the dockerization of the backend.
