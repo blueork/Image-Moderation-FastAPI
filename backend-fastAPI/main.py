@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 # import ImageModerationRouter
 from middleware import UsageLoggerMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from auth import router as auth_router
 from ImageModerationRouter import router as moderate_router
 from db import tokens_col
@@ -39,6 +40,14 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.add_middleware(UsageLoggerMiddleware)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # app.include_router(ImageModerationRouter.router)
 app.include_router(auth_router)
