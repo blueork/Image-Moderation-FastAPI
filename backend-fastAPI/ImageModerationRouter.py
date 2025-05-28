@@ -1,9 +1,10 @@
-from fastapi import FastAPI, UploadFile, File, Response, status, HTTPException, Depends, APIRouter
+from fastapi import FastAPI, UploadFile, File, Response, status, HTTPException, Depends, APIRouter, Depends
 from ImageModerationService import ImageModerationService
+from models import get_token_data
 
-router = APIRouter()
+router = APIRouter(tags=["moderation"])
 
-@router.post("/detect-image")
+@router.post("/moderate", dependencies=[Depends(get_token_data)])
 async def detectImage(file: UploadFile = File(...)):
     # data = json.load(file.read())
     # file.filename = f"{uuid.uuid4()}.jpg"
