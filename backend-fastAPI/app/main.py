@@ -41,9 +41,14 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.add_middleware(UsageLoggerMiddleware)
 
+origins = [
+    "http://localhost:5173",   # Vite default
+    "http://127.0.0.1:5173",   # alternate
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # React dev server
+    allow_origins=origins,  # React dev server
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
